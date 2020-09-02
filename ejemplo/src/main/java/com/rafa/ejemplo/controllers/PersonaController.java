@@ -1,9 +1,8 @@
 package com.rafa.ejemplo.controllers;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,7 @@ public class PersonaController {
 	PersonaSevice personaService;
 	
 	@GetMapping("/{dni}")
-	public Persona getPersona(@PathParam(value = "dni") String dni) {
+	public Persona getPersona(@PathVariable String dni) {
 		
 		return personaService.obtenerPersonaPorId(dni);
 		

@@ -1,6 +1,7 @@
 package com.rafa.ejemplo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,11 +27,18 @@ public class PersonaController {
 	}
 	
 	@PostMapping
-	public Persona PostPersona(@RequestBody Persona persona) {
+	public Persona postPersona(@RequestBody Persona persona) {
 		
 		personaService.crearPersona(persona);
 		
 		return persona;	
+	}
+	
+	@DeleteMapping("/{dni}")
+	public void deletePersona(@PathVariable String dni) {
+		
+		personaService.borrarPersona(dni);
+		
 	}
 
 }

@@ -7,5 +7,7 @@ public interface PersonaSevice {
 	public Persona crearPersona(Persona persona);
 	
 	public Persona obtenerPersonaPorId(String dni);
+	
+	public void borrarPersona(String dni);
 
 }

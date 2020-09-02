@@ -27,4 +27,11 @@ public class PersonaServiceImpl implements PersonaSevice{
 		return personaRepository.findById(dni).orElse(null);
 	}
 
+	@Override
+	public void borrarPersona(String dni) {
+		
+		personaRepository.deleteById(dni);
+		
+	}
+
 }
